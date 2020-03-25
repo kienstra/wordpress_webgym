@@ -1,0 +1,684 @@
+/*
+Theme Name: GymFitnessFlexCssGrid
+Theme URI:
+Author: Nacho Lambardi
+Author URI: https://github.com/NachoLambardi
+Description: Theme for Fitness & Gym 
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: Gym, Gimnasio, Fitness, Css grid, Mobile first, Workout.
+Text domain: gymfitness
+
+*/
+
+:root {
+    /** Fonts **/
+    --mainFont : 'Staatliches', cursive;
+    --textFont : 'Open Sans', sans-serif;
+    --secondFont : 'Raleway', sans-serif;
+    
+    /** Colours **/
+    --primaryColour : #ff5b00;
+    --darkGrey : #2f2e2e;
+    --lightGrey : #ebebeb;
+    --white : #ffffff;
+    --black : #0e0d0d;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px = 1rem! */
+  }
+
+body {
+    font-size: 16px; /* px fallback */
+    font-size: 1.6rem;
+    line-height: 2;
+    font-family: var(--secondFont); 
+  }
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  /** Headings **/
+  h1, h2, h3, h4 {
+      font-family: var(--mainFont);
+      margin: 1rem 0;
+      line-height: 1.2;
+  }
+
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4.8rem;
+}
+
+h3 {
+    font-size: 3.6rem;
+}
+
+h4 {
+    font-size: 2.4rem;
+}
+
+/** General **/
+
+a {
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;    
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.Content {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+hr {
+    border: 1px solid var(--lightGrey);
+}
+
+.imagen-destacada {
+    margin-bottom: 10rem;
+}
+
+
+/** Utilidades **/
+
+.text-center {
+    text-align: center;
+}
+
+.texto-primario {
+    color: var(--primaryColour);
+}
+
+.seccion {
+    padding: 5rem 0;
+}
+
+/** Header **/
+
+
+.site-header {
+    padding: 2rem 0;
+    background-color: var(--darkGrey);  
+}
+
+@media (min-width: 768px){
+    .Navbar {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}
+.tagline {
+    color: white;
+    margin-top: 10rem;
+}
+/** Main Menu **/
+
+.main-menu {
+    display: none;
+}
+
+@media (min-width: 768px){
+    .main-menu {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+}
+
+.main-menu .menu {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-menu li {
+    margin-right: 2rem;
+}
+
+.main-menu li:last-of-type {
+    margin-right: 0;
+}
+
+.main-menu a {
+    font-family: var(--mainFont);
+    color: var(--white);
+    padding: .5rem 2rem;
+    
+}
+
+@media (min-width: 768px){
+    .main-menu a {
+        font-size: 2.6rem;
+        position: relative;
+        z-index: 1;
+    }
+    .main-menu a::before,
+    .main-menu a::after{
+        position: absolute;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        background-color: var(--primaryColour);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: .6s;
+    } 
+
+    .main-menu a::before {
+        top: 0;
+        transform-origin: left;
+    }
+
+    .main-menu a::after {
+        top: 50%;
+        transform-origin: right;
+    }
+
+.main-menu a:hover::before{
+        transform: scaleX(1);
+    }
+
+.main-menu a:hover::after{
+        transform: scaleX(1);
+    }
+
+}
+.main-menu .current_page_item {
+    border-bottom: 3px solid var(--primaryColour);
+}
+
+/** New Mobile Styles **/
+
+.slicknav_menu {
+    background-color: var(--darkGrey);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (min-width: 768px){
+    .slicknav_menu{
+    display: none;
+    }
+}
+
+.slicknav_btn {
+    background-color: var(--primaryColour);
+    border-radius: 30px;
+    margin: 4rem;
+    padding: 1.5rem;
+}
+
+.slicknav_nav a {
+    font-size: 2.4rem;
+    text-align: center;
+    font-family: var(--mainFont);
+}
+
+.slicknav_nav a:hover {
+    background: transparent;
+    color: var(--primaryColour);
+}
+
+/** Footer **/
+
+.content-footer 
+{
+    padding: 4rem 0;
+    display: block;
+}
+
+.site-footer .main-menu 
+{
+    display: block;
+    width: 100%;
+}
+
+@media (min-width: 768px) 
+{
+    .content-footer 
+    {
+        display: flex;
+        justify-content: space-between;
+    
+    }
+}
+
+.site-footer a 
+{
+    color: var(--negro);
+    text-align: center;
+    font-size: 2.4rem;
+    padding: 0 1rem;
+}
+.site-footer .main-menu .current_page_item 
+{
+    border: none;
+}
+@media (min-width: 768px) 
+{
+    .site-footer .main-menu .current_page_item 
+    {
+        border-bottom: 3px solid var(--colorPrimario);
+    }
+}
+.site-footer .main-menu a::before, 
+.site-footer .main-menu a::after 
+{
+    display: none;
+}
+ 
+.copyright 
+{
+    text-align: center;
+    font-family: var(--fuentePrincipal);
+    font-size: 1.5rem;
+    margin: 2rem 0 0 0;
+}
+ 
+@media (min-width: 768px) 
+{
+    .copyright 
+    {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+}
+
+/** Pages **/
+
+.pagina h1 {
+    margin-bottom: 4rem;
+}
+
+@media (min-width: 768px){
+    .pagina.con-sidebar {
+        display: flex;
+        justify-content: space-between;
+    }
+    .con-sidebar .contenido-principal {
+        flex: 0 0 calc(65% - 2rem);
+    }
+    .con-sidebar .sidebar {
+        flex: 0 0 calc(35% - 2rem);
+    }
+    
+}
+
+/** No Sidebar **/
+
+.no-sidebar {
+    display: flex;
+    justify-content: center;
+}
+
+.no-sidebar .contenido-principal {
+    flex: 0 1 800px;
+}
+
+/** Single Clases **/
+.informacion-clase {
+    font-weight: 700;
+    font-family: var(--secondFont);
+    font-size: 2.2rem;
+    text-align: justify;
+}
+
+
+/** Clases **/
+
+@media (min-width: 768px){
+     .gradient::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        height: 96%;
+        /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.15+99,0.65+100 */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.15) 99%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.15) 99%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.15) 99%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#26000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+            }
+};
+
+
+.lista-clases,
+.listado-blog
+  {
+    margin-top: 4rem;   
+}
+
+@media (min-width: 768px){
+    .lista-clases, .listado-blog  {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+};
+.listado-blog .card .contenido {
+    padding: 0 2rem 2rem;
+    text-align: center;
+}
+@media (min-width: 768px){
+    .lista-clases h3 {
+        font-weight: 700;
+        font-size: 3rem;
+    }
+};
+
+
+/** Cards **/
+
+.card {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--lightGrey);
+}
+.card:last-of-type{
+    border: none;
+}
+@media (min-width: 768px){
+    .card {
+        flex: 0 0 calc(50% - 2rem);
+        position: relative;
+        
+    }
+};
+
+.card img {
+    display: block;
+}
+
+.card .contenido {
+    padding: 1.5rem;
+}
+
+@media (min-width: 768px){
+    .card .contenido {
+        position: absolute;
+        bottom: 0;
+        text-align: left;
+        font-weight: 700;
+        font-size: large;
+        z-index: 2;
+    }
+};
+
+.card .contenido h3 {
+    line-height: 1;
+    color: var(--primaryColour);
+}
+
+@media (min-width: 768px){
+    .card .contenido h3 {
+        color: var(--primaryColour);
+    }
+};
+
+.card .contenido p {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+@media (min-width: 768px){
+    .card .contenido p,
+    .card .contenido a{
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: var(--white);
+    }
+};
+
+.card .contenido .meta,
+.card .contenido .meta a {
+    color: var(--black);
+}
+@media (min-width: 768) {
+.card .contenido .meta,
+.card .contenido .meta a
+    {
+    color: var(--white);
+    }
+};
+.card .contenido .meta span {
+    color: var(--primaryColour);   
+}
+.card .contenido .meta {
+    font-size: 1.4rem;
+}
+.post-categories{
+    display: flex;
+    justify-content: center;
+}
+@media (min-width: 768px){
+    .post-categories {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        z-index: 10;       
+    }
+}
+.post-categories li {
+    padding: .5rem 2rem;
+    margin-right: 2rem;
+    border-radius: .7rem;
+}
+@media (min-width: 768px){
+    .post-categories li {
+        background-color: var(--primaryColour);
+    }
+};
+.post-categories li a {
+    font-size: 2.2rem;
+    font-family: var(--mainFont);
+    color: var(--lightGrey);
+}
+@media (min-width: 768px){
+    .post-categories li a {
+        color: var(--white);
+    }
+};
+
+.post-categories li:last-of-type {
+    margin-right: 0;
+}
+/** Clase Sidebar **/
+
+.clase-sidebar {
+ 
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+
+.clase-sidebar .imagen {
+    flex: 0 0 30%;
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    justify-content: space-between;
+}
+.clase-sidebar .imagen img {
+    display: flex;
+}
+.clase-sidebar .contenido-clase {
+    flex-flow: wrap;
+    flex: 0 0 calc(70% - 2rem);
+    padding-left: 6rem;
+}
+.clase-sidebar .contenido-clase h3 {
+    margin: 0;
+    font-size: 2.6rem;
+}
+.clase-sidebar .contenido-clase a {
+    color: var(--primaryColour);
+    display: flex;
+}
+.clase-sidebar .contenido-clase p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+/** Sidebar **/
+.widget {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--lightGrey);
+}
+.widget:first-of-type {
+    padding: 0;
+}
+.widget:last-of-type {
+    border: none;
+}
+.widget a {
+    color: black;
+}
+.widget a:hover {
+    color: var(--primaryColour);
+}
+
+/** Galeria **/
+
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+    grid-gap: 2rem;
+}
+@media (min-width: 768px){
+    .galeria-imagenes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+.galeria-imagenes img {
+    display: block;
+}
+.galeria-imagenes li:nth-child(4) {
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+}
+@media (min-width: 768px){
+    .galeria-imagenes li:nth-child(4){
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+/** Form **/
+.wpcf7-form label {
+    font-weight: 700;
+}
+.wpcf7-form .wpcf7-form-control {
+    width: 100%;
+    padding: 1rem;
+    height: 4rem;
+    border: 1px solid var(--darkGrey);
+    border-radius: 20px;
+}
+.wpcf7-form .wpcf7-textarea {
+    height: 10rem;
+}
+.wpcf7-form  .wpcf7-submit {
+    background-color: var(--primaryColour);
+    border: 2px solid(--darkGrey);
+    font-size: 2rem;
+    font-family: var(--mainFont);
+    padding: 1.2rem;
+    height: auto;
+    color: white;
+
+}
+.wpcf7-form  .wpcf7-submit:hover {
+    cursor: pointer;
+}
+div.wpcf7-validation-errors {
+    background-color: #f7e700;
+    font-size: 2rem;
+    font-family: var(--secondFont);
+    color: var(--darkGrey);
+    border: 1.5px solid var(--primaryColour);
+    text-align: center;
+    border-radius: 20px;
+}
+div.wpcf7 .ajax-loader {
+    display: block;
+    margin: 2rem auto 0 auto;
+}
+div.wpcf7-mail-sent-ok {
+    border: 2px solid var(--darkGrey);
+    background-color: green;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 20px;
+}
+.wpcf7-form .wpcf7-not-valid-tip {
+    background-color: red;
+    color: white;
+    font-weight: 700;
+    font-family: var(--secprondFont);
+    border-radius: 20px;
+    width: 40%;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .wpcf7-form label {
+        font-weight: 700;
+        
+    }
+    .wpcf7-form .wpcf7-form-control {
+        width: 100%;
+        padding: 1rem;
+        height: 4rem;
+        border: 1px solid var(--darkGrey);
+        border-radius: 20px;
+    }
+    .wpcf7-form .wpcf7-textarea {
+        height: 10rem;
+    }
+    .wpcf7-form  .wpcf7-submit {
+        background-color: var(--primaryColour);
+        border: 2px solid(--darkGrey);
+        font-size: 2rem;
+        font-family: var(--mainFont);
+        padding: 1.2rem;
+        height: auto;
+        color: white;
+    
+    }
+    .wpcf7-form  .wpcf7-submit:hover {
+        cursor: pointer;
+}
+}
+
+/** Map **/
+
+#mapa {
+    height: 300px;
+}
