@@ -1,0 +1,20 @@
+{
+  "name": "wordpress_webgym",
+  "version": "1.0.0",
+  "description": "WordPress theme",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/NachoLambardi/wordpress_webgym.git"
+  },
+  "author": "Nacho Lambardi",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/NachoLambardi/wordpress_webgym/issues"
+  },
+  "homepage": "https://github.com/NachoLambardi/wordpress_webgym#readme",
+  "scripts": {
+    "lint:php": "vendor/bin/phpcs",
+    "lint:php:fix": "vendor/bin/phpcbf"
+  }
+}

@@ -1,0 +1,13 @@
+{
+	"name": "nacholambardi/wordpress_webgym",
+	"description": "A WordPress theme",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-or-later",
+	"minimum-stability": "stable",
+	"require": {},
+	"require-dev": {
+		"dealerdirect/phpcodesniffer-composer-installer": "0.6.2",
+		"phpcompatibility/phpcompatibility-wp": "*",
+		"wp-coding-standards/wpcs": "2.2.1"
+	}
+}
